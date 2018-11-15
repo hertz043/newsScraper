@@ -68,7 +68,6 @@ app.get("/articles/:id", function(req, res) {
   db.Article.findOne({ _id: req.params.id })
     .populate("comment")
     .then(function(dbArticle) {
-        console.log(dbArticle)
       res.json(dbArticle);
     })
     .catch(function(err) {
